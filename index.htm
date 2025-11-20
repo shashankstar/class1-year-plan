@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 1 – Full Year Academic Planner (All Subjects)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --bg: #f3f4f6;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --radius-lg: 14px;
+      --radius-xl: 22px;
+      --shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { margin: 0; background: var(--bg); color: var(--text); }
+    header {
+      background: linear-gradient(135deg, #1d4ed8, #22c55e);
+      color: #f9fafb; padding: 18px 16px 16px;
+      box-shadow: var(--shadow-soft); position: sticky; top: 0; z-index: 10;
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px;
+    }
+    .brand-title { font-size: 1.2rem; font-weight: 700; letter-spacing: .03em; display: flex; align-items: center; gap: 8px; }
+    .brand-pill { padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(248, 250, 252, .4); font-size: .7rem; text-transform: uppercase; }
+    .tagline { font-size: .8rem; opacity: .9; }
+    main { max-width: 1100px; margin: 16px auto 32px; padding: 0 12px; }
+    .card { background: var(--card-bg); border-radius: var(--radius-xl); padding: 18px 16px 20px;
+      box-shadow: var(--shadow-soft); border: 1px solid var(--border); }
+    h2 { margin: 0 0 4px; font-size: 1.05rem; }
+    .subtitle { margin: 0 0 12px; font-size: .86rem; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 16px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 650px) { .grid { grid-template-columns: 1fr; } }
+    label { font-size: .8rem; color: var(--muted); display: block; margin-bottom: 3px; }
+    select, input[type="text"] {
+      width: 100%; padding: 7px 8px; border-radius: 10px; border: 1px solid var(--border);
+      font-size: .88rem; outline: none; background: #f9fafb;
+    }
+    select:focus, input[type="text"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, .3); background: #fff;
+    }
+    .btn-row { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn {
+      border-radius: 999px; border: none; padding: 7px 14px; font-size: .84rem; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+    }
+    .btn-primary { background: #2563eb; color: #f9fafb; }
+    .btn-secondary { background: #e5e7eb; color: #111827; }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: #6b7280; }
+    .btn:active { transform: translateY(1px); }
+    .status { font-size: .78rem; color: var(--muted); margin-top: 4px; }
+    .output-card {
+      margin-top: 16px; padding: 12px 12px; background: #f9fafb;
+      border-radius: var(--radius-lg); border: 1px dashed #cbd5f5;
+      max-height: 560px; overflow: auto; font-size: .86rem; line-height: 1.4;
+    }
+    .output-card h3 { margin-top: 0; font-size: .95rem; }
+    .muted-note { font-size: .76rem; color: var(--muted); margin-top: 4px; }
+    .footer-note { margin-top: 10px; font-size: .74rem; color: #6b7280; text-align: right; }
+    table { border-collapse: collapse; width: 100%; font-size: .8rem; margin-top: 6px; }
+    th, td { border: 1px solid #e5e7eb; padding: 4px 6px; text-align: left; }
+    th { background: #eff6ff; font-weight: 600; }
+    .subject-header { margin-top: 12px; font-weight: 600; font-size: .9rem; }
+    .pill { display: inline-block; padding: 2px 6px; border-radius: 999px; background: #e0f2fe; font-size: .7rem; margin-left: 4px; }
+    .two-col { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
+    @media print {
+      header, .controls, .footer-note { display: none !important; }
+      body { background: #ffffff; }
+      .card { box-shadow: none; border-radius: 0; border: none; padding: 0; }
+      .output-card { border: none; max-height: none; background: #ffffff; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="brand-title">
+        Class 1 – Full Year Academic Planner
+        <span class="brand-pill">All Subjects • 150 Days • One-Click</span>
+      </div>
+      <div class="tagline">
+        Reads a JSON file of your year plan and generates a full academic blueprint – printable as PDF.
+      </div>
+    </div>
+    <div class="tagline">Powered by <strong>Shashank Sharma</strong></div>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <div class="controls">
+      <h2>Year Plan Generator – Class 1</h2>
+      <p class="subtitle">
+        This version is fixed for Class 1. It loads <code>full_year_plan_class1.json</code> (same folder) and generates:
+        a combined table for all subjects and subject-wise tables. Then you can Print → Save as PDF.
+      </p>
+
+      <div class="grid">
+        <div>
+          <label>Class</label>
+          <select id="classSelect" disabled>
+            <option>Class 1</option>
+          </select>
+        </div>
+        <div>
+          <label>School Name (optional – appears on PDF)</label>
+          <input id="schoolName" type="text" placeholder="e.g. Suryodaya Global Academy">
+        </div>
+        <div>
+          <label>Academic Year</label>
+          <input id="academicYear" type="text" placeholder="e.g. 2025–26">
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="generateYearPlan()">⚙ Generate Full Year Plan</button>
+        <button class="btn btn-secondary" onclick="printPlan()">🖨 Print / Save as PDF</button>
+      </div>
+      <div id="status" class="status">Loading JSON plan…</div>
+    </div>
+
+    <div class="output-card" id="planOutput">
+      <h3>Full Year Plan Preview</h3>
+      <p class="muted-note">
+        Once the JSON is loaded, click “Generate Full Year Plan”.  
+        You’ll see a combined all-subject table + separate subject-wise tables. Use the print button to export as PDF.
+      </p>
+    </div>
+
+    <div class="footer-note">
+      Class 1 Academic Planner • One-click generator • Use browser “Save as PDF” for download.
+    </div>
+  </div>
+</main>
+
+<script>
+  let fullYearPlan = null;
+
+  // Load JSON on page load
+  fetch('full_year_plan_class1.json')
+    .then(resp => {
+      if (!resp.ok) {
+        throw new Error('HTTP ' + resp.status);
+      }
+      return resp.json();
+    })
+    .then(data => {
+      fullYearPlan = data;
+      const statusEl = document.getElementById('status');
+      statusEl.textContent = 'JSON loaded: ' + (data.class || 'Class 1') + ' – ' + Object.keys(data.subjects).length + ' subjects.';
+    })
+    .catch(err => {
+      console.error(err);
+      const statusEl = document.getElementById('status');
+      statusEl.textContent = 'Could not load full_year_plan_class1.json. Check file name and that it is in the same folder as index.html.';
+      statusEl.style.color = '#b91c1c';
+    });
+
+  function generateYearPlan() {
+    if (!fullYearPlan) {
+      alert('Year plan JSON not loaded yet. Please check the status message above.');
+      return;
+    }
+
+    const schoolName = document.getElementById('schoolName').value.trim();
+    const academicYear = document.getElementById('academicYear').value.trim();
+    const cls = fullYearPlan.class || 'Class 1';
+    const totalDays = fullYearPlan.totalDays || 150;
+    const subjects = fullYearPlan.subjects || {};
+
+    // Combined table data
+    let combinedRows = [];
+    Object.keys(subjects).forEach(subjectName => {
+      const list = subjects[subjectName] || [];
+      list.forEach(ch => {
+        combinedRows.push({
+          subject: subjectName,
+          chapter: ch.chapter,
+          days: ch.days,
+          start: ch.start,
+          end: ch.end
+        });
+      });
+    });
+
+    // Sort combined by subject then start day
+    combinedRows.sort((a, b) => {
+      if (a.subject < b.subject) return -1;
+      if (a.subject > b.subject) return 1;
+      return a.start - b.start;
+    });
+
+    const combinedTableHtml = `
+<h3 style="margin-bottom:4px;">Full Year Academic Plan – ${cls} ${academicYear ? '(' + academicYear + ')' : ''}</h3>
+${schoolName ? `<p style="margin:0 0 6px;"><strong>School:</strong> ${schoolName}</p>` : ''}
+<p class="muted-note" style="margin-top:0;">
+Total teaching days per subject planned = <strong>${totalDays}</strong>.
+Each subject runs its own 1–${totalDays} learning sequence.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Unit / Chapter</th>
+      <th>Planned Days</th>
+      <th>Start Day</th>
+      <th>End Day</th>
+    </tr>
+  </thead>
+  <tbody>
+    ${combinedRows.map(row => `
+      <tr>
+        <td>${row.subject}</td>
+        <td>${row.chapter}</td>
+        <td>${row.days}</td>
+        <td>${row.start}</td>
+        <td>${row.end}</td>
+      </tr>`).join('')}
+  </tbody>
+</table>`;
+
+    // Subject-wise sections
+    let subjectSectionsHtml = '';
+    Object.keys(subjects).forEach(subjectName => {
+      const list = subjects[subjectName] || [];
+      const total = list.reduce((acc, c) => acc + (c.days || 0), 0);
+      subjectSectionsHtml += `
+<div class="subject-section">
+  <div class="subject-header">${subjectName}
+    <span class="pill">${total} days</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Unit / Chapter</th>
+        <th>Days</th>
+        <th>Start Day</th>
+        <th>End Day</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${list.map((ch, idx) => `
+        <tr>
+          <td>${idx + 1}</td>
+          <td>${ch.chapter}</td>
+          <td>${ch.days}</td>
+          <td>${ch.start}</td>
+          <td>${ch.end}</td>
+        </tr>`).join('')}
+    </tbody>
+  </table>
+</div>`;
+    });
+
+    const planOutput = document.getElementById('planOutput');
+    planOutput.innerHTML = combinedTableHtml + subjectSectionsHtml +
+      `<p class="muted-note">Note: Schools can map “Day 1–${totalDays}” to actual calendar dates according to their working days and holidays. This tool standardises chapter-wise pacing across all sections.</p>`;
+  }
+
+  function printPlan() {
+    // Just call browser print – user can select "Save as PDF"
+    window.print();
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "class": "Class 1",
+  "totalDays": 150,
+  "subjects": {
+    "English": [
+      { "chapter": "A Happy Child / Three Little Pigs", "days": 15, "start": 1, "end": 15 },
+      { "chapter": "After a Bath / The Bubble, the Straw and the Shoe", "days": 15, "start": 16, "end": 30 },
+      { "chapter": "One Little Kitten / Lalu and Peelu", "days": 14, "start": 31, "end": 44 },
+      { "chapter": "Once I Saw a Little Bird / Mittu and the Yellow Mango", "days": 14, "start": 45, "end": 58 },
+      { "chapter": "Merry-Go-Round / Circle", "days": 14, "start": 59, "end": 72 },
+      { "chapter": "If I Were an Apple / Our Tree", "days": 14, "start": 73, "end": 86 },
+      { "chapter": "A Kite / Sundari", "days": 14, "start": 87, "end": 100 },
+      { "chapter": "A Little Turtle / The Tiger and the Mosquito", "days": 15, "start": 101, "end": 115 },
+      { "chapter": "Clouds / Anandi’s Rainbow", "days": 15, "start": 116, "end": 130 },
+      { "chapter": "Flying Man / The Tailor and His Friend", "days": 20, "start": 131, "end": 150 }
+    ],
+    "Hindi": [
+      { "chapter": "झूला", "days": 12, "start": 1, "end": 12 },
+      { "chapter": "आम की कहानी", "days": 12, "start": 13, "end": 24 },
+      { "chapter": "आम की टोकरी", "days": 12, "start": 25, "end": 36 },
+      { "chapter": "पत्ते ही पत्ते", "days": 12, "start": 37, "end": 48 },
+      { "chapter": "पकौड़ी", "days": 12, "start": 49, "end": 60 },
+      { "chapter": "छुक-छुक गाड़ी", "days": 12, "start": 61, "end": 72 },
+      { "chapter": "रसोईघर", "days": 12, "start": 73, "end": 84 },
+      { "chapter": "चूहो! म्याऊँ सो रही है", "days": 12, "start": 85, "end": 96 },
+      { "chapter": "बन्दर और गिलहरी", "days": 12, "start": 97, "end": 108 },
+      { "chapter": "पगड़ी", "days": 12, "start": 109, "end": 120 },
+      { "chapter": "पतंग", "days": 12, "start": 121, "end": 132 },
+      { "chapter": "गेंद-बल्ला", "days": 18, "start": 133, "end": 150 }
+    ],
+    "Mathematics": [
+      { "chapter": "Shapes and Space", "days": 15, "start": 1, "end": 15 },
+      { "chapter": "Numbers 1 to 9", "days": 15, "start": 16, "end": 30 },
+      { "chapter": "Addition", "days": 15, "start": 31, "end": 45 },
+      { "chapter": "Subtraction", "days": 15, "start": 46, "end": 60 },
+      { "chapter": "Numbers 10 to 20", "days": 15, "start": 61, "end": 75 },
+      { "chapter": "Time", "days": 15, "start": 76, "end": 90 },
+      { "chapter": "Measurement (Length, Weight)", "days": 15, "start": 91, "end": 105 },
+      { "chapter": "Patterns", "days": 15, "start": 106, "end": 120 },
+      { "chapter": "Data Handling", "days": 10, "start": 121, "end": 130 },
+      { "chapter": "Money and Simple Bills", "days": 20, "start": 131, "end": 150 }
+    ],
+    "EVS": [
+      { "chapter": "About Me", "days": 12, "start": 1, "end": 12 },
+      { "chapter": "My Body and Cleanliness", "days": 13, "start": 13, "end": 25 },
+      { "chapter": "My Family", "days": 12, "start": 26, "end": 37 },
+      { "chapter": "My Home", "days": 12, "start": 38, "end": 49 },
+      { "chapter": "My School", "days": 13, "start": 50, "end": 62 },
+      { "chapter": "People Who Help Us", "days": 12, "start": 63, "end": 74 },
+      { "chapter": "Food We Eat", "days": 13, "start": 75, "end": 87 },
+      { "chapter": "Clothes We Wear", "days": 12, "start": 88, "end": 99 },
+      { "chapter": "Our Festivals", "days": 12, "start": 100, "end": 111 },
+      { "chapter": "Plants and Animals Around Us", "days": 13, "start": 112, "end": 124 },
+      { "chapter": "Transport", "days": 12, "start": 125, "end": 136 },
+      { "chapter": "Seasons and Weather", "days": 14, "start": 137, "end": 150 }
+    ],
+    "Computer": [
+      { "chapter": "What is a Computer?", "days": 20, "start": 1, "end": 20 },
+      { "chapter": "Parts of a Computer", "days": 20, "start": 21, "end": 40 },
+      { "chapter": "Uses of Computers", "days": 20, "start": 41, "end": 60 },
+      { "chapter": "How to Start and Shut Down", "days": 20, "start": 61, "end": 80 },
+      { "chapter": "Using Mouse and Keyboard", "days": 20, "start": 81, "end": 100 },
+      { "chapter": "Drawing on Computer (Paint)", "days": 20, "start": 101, "end": 120 },
+      { "chapter": "Safety Rules in Computer Lab", "days": 30, "start": 121, "end": 150 }
+    ],
+    "GK": [
+      { "chapter": "My Country and Symbols", "days": 20, "start": 1, "end": 20 },
+      { "chapter": "Famous Places and Monuments", "days": 20, "start": 21, "end": 40 },
+      { "chapter": "Great Leaders", "days": 20, "start": 41, "end": 60 },
+      { "chapter": "Our National Festivals", "days": 15, "start": 61, "end": 75 },
+      { "chapter": "Common Birds and Animals", "days": 20, "start": 76, "end": 95 },
+      { "chapter": "Fruits and Vegetables", "days": 15, "start": 96, "end": 110 },
+      { "chapter": "Good Manners and Habits", "days": 20, "start": 111, "end": 130 },
+      { "chapter": "Traffic Signals and Road Safety", "days": 20, "start": 131, "end": 150 }
+    ]
+  }
+}
